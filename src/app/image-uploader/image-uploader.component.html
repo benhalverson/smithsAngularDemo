@@ -1,6 +1,17 @@
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="file">Choose File</label>
   <input type="file"
          id="file"
          (change)="handleFileInput($event.target.files)">
+</div> -->
+
+<form  enctype="multipart/form-data">
+  <label for="image-upload">Select an image:</label><br/>
+  <input name="image-upload"  type="file" (change)="preview($event)" accept="image/*"/>
+</form>
+
+<canvas #mycanvas id="canvas-element" width="300" height="300" style="border: 1px solid red"></canvas>
+<label>This is the Image:</label><br/>
+<div class="image-container">
+  <img src="" id="image-preview" />
 </div>
